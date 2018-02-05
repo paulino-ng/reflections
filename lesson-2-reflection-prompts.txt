@@ -1,28 +1,63 @@
 What happens when you initialize a repository? Why do you need to do it?
 
 	It initializes .git directory, it prints:
-Initialized empty Git repository in /home/paulino/version-control/<repos-dir>/.git/
+Initialized empty Git repository in
+/home/paulino/version-control/<repos-dir>/.git/
 It keeps a log of changes.
 Commands: git init -- init .git directory/repository
           git status -- to see which files haven't been saved (commited)
 
+
 How is the staging area different from the working directory and the repository?
 What value do you think it offers?
 
-	Staging area is where files that are really part of the repository are.
-To include files from working directory into the staging area: git add <file>,
-repository is what we get after commiting.
+	Staging area is where files which are added (git add) are.
+Staging area is a transitory space were files wait to be saved in repository.
+To include files from working directory into the staging area: git add <file>.
+Repository is where files go after commiting.
+
 
 How can you use the staging area to make sure you have one commit per logical
 change?
 
+	We can use different types of "git diff" to check if there is a logical
+change before commiting.
+git diff without arguments shows differences between working directory and
+staging area.
+"git diff --staged" shows differences between staging area and last commit.
+
+
 What are some situations when branches would be helpful in keeping your history
 organized? How would branches help?
 
+	When development wants to introduce a new feature but at the same time
+don't wish to mesh with working system, we can use a new branch of development.
+Branches enables introducing new features without disturbing "main" development
+with bugs due to other branches.
+
+
 How do the diagrams help you visualize the branch structure?
+
+	It makes easy to visualize where branches were created and which nodes
+(checkpoints) are reacheable. To make a commit on modifications to a checkpoint
+that is not HEAD, it needs to create a new branch on the bifucation checkpoint:
+git chechout <checkpoint_id>; ..<modifs>.. ; git commit -b <new_branch_name>
+
 
 What is the result of merging two branches together? Why do we represent it in
 the diagram the way we do?
 
+	Changes (commits) made in both branches are joined cronologicaly.
+The diagram joins both branches and not master one can be deleted: 
+git branch -d <branch_name>.
+
+
 What are the pros and cons of Git's automatic merging vs. always doing merges
 manually?
+
+	Git can automatically merge following some logical rules, but there
+are situations where a automatic merge of changes cannot be executed based on
+the rules. In these cases a manual merging is needed. Git puts marks >>>>, 
+=== and <<<< to refer to differences in original (common ancestral) and
+branches files.
+
