@@ -17,4 +17,11 @@ you use one instead of another?
 repository either from a remote one or from a local one. Branches are
 alternative development sequences of changes.
 
+What is the benefit of having a copy of the last known state of the remote
+stored locally?
+
+	This way if you make new commits and merge next, it will be possible
+to make fast-forward merges. Because your new commits can reach last known
+state of the remote.
+
 
