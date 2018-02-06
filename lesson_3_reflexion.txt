@@ -24,4 +24,11 @@ stored locally?
 to make fast-forward merges. Because your new commits can reach last known
 state of the remote.
 
+How would you collaborate without using Git or GitHub? What would be easier,
+and what would be harder?
+
+	Each collaborator would work on its own copy of files and from time
+to time an pause for integration of differences would be made. It would be
+easy to develop individual changes but integration would be complexe.
+
 
