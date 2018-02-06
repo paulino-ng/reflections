@@ -31,4 +31,8 @@ and what would be harder?
 to time an pause for integration of differences would be made. It would be
 easy to develop individual changes but integration would be complexe.
 
+When would you want to make changes in a separate branch rather than directly
+in master? What benefits does each approach have?
 
+	When changes are too experimental to be part of master branch.
+??? which approaches?
